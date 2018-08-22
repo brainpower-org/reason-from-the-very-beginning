@@ -1,0 +1,27 @@
+{
+  "name": "reason-from-the-very-beginning",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "dependencies": {
+    "bs-platform": "^4.0.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "watch": "bsb -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/marionebl/ocaml-from-the-very-beginning.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/marionebl/ocaml-from-the-very-beginning/issues"
+  },
+  "homepage": "https://github.com/marionebl/ocaml-from-the-very-beginning#readme"
+}

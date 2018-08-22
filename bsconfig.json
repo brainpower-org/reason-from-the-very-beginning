@@ -1,0 +1,13 @@
+{
+  "name": "my-first-app",
+  "generate-merlin": true,
+  "sources": ["src"],
+  "package-specs": {
+    "module": "commonjs",
+    "in-source": true
+  },
+  "suffix": ".js",
+  "bs-dependencies": [],
+  "namespace": true,
+  "refmt": 3
+}
