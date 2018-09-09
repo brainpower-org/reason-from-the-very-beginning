@@ -1,13 +1,21 @@
 {
   "name": "my-first-app",
   "generate-merlin": true,
-  "sources": ["src"],
+  "sources": [
+    "src",
+    {
+      "dir": "__tests__",
+      "type": "dev"
+    }
+  ],
   "package-specs": {
     "module": "commonjs",
     "in-source": true
   },
   "suffix": ".js",
-  "bs-dependencies": [],
+  "bs-dependencies": [
+    "@glennsl/bs-jest"
+  ],
   "namespace": true,
   "refmt": 3
 }
