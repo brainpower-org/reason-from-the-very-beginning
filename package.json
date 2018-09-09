@@ -14,7 +14,8 @@
     "jest": "^23.5.0"
   },
   "scripts": {
-    "watch": "bsb -w"
+    "watch": "bsb -w",
+    "test": "jest"
   },
   "repository": {
     "type": "git",
