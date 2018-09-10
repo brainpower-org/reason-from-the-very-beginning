@@ -5,6 +5,11 @@
 * TDD via `bs-jest`
 * Exercises taken from OCaml from the very Beginnging
 
+## Prerequesites
+
+* yarn `>= 1.9`
+* Node.js `>= 8`
+
 ## Getting started
 
 ```sh
@@ -17,3 +22,8 @@ yarn test --watchAll
 # Third terminal session
 node src/[module-name]
 ```
+
+
+## Related
+
+* [OCaml from the very Beginning](https://github.com/sinnerschrader/ocaml-from-the-very-beginning)
