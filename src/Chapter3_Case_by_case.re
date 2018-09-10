@@ -4,10 +4,6 @@ let not = a =>
     | _ => true
     }
 
-
-not(true) |> Js.log;
-not(false) |> Js.log;
-
 let rec sum = n => 
     switch (n) {
         | 0 => 0
@@ -21,15 +17,6 @@ let rec power = (x, n: float) =>
         | _ => x *. power(x, n -. 1.)
     };
 
-sum(1) |> Js.log;
-sum(2) |> Js.log;
-sum(0) |> Js.log;
-
-/* 
-power(2, 2) |> Js.log; 
-power(2, 0) |> Js.log;
-*/
-power(2., -1.) |> Js.log;
 
 let isUpper = c => 
     switch(c) {
@@ -44,17 +31,8 @@ let isLower = c =>
     | _ => false
     };
 
-isUpper('A') |> Js.log;
-isUpper('b') |> Js.log;
-isLower('A') |> Js.log;
-isLower('b') |> Js.log;
-isLower('0') |> Js.log;
 
 
 let isin = (s, e, c) =>
     Char.code(c) <= Char.code(e) &&
     Char.code(c) >= Char.code(s);
-
-isin('a','z','0') |> Js.log;
-isin('a','z','a') |> Js.log;
-isin('a','z','b') |> Js.log;
