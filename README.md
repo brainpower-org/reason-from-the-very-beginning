@@ -1,3 +1,10 @@
+# Reason from the very Beginning
+
+* Study repository for learning ReasonML
+* Basic `bs-platform` setup
+* TDD via `bs-jest`
+* Exercises taken from OCaml from the very Beginnging
+
 ## Getting started
 
 ```sh
