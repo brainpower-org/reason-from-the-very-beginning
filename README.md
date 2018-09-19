@@ -14,6 +14,8 @@
 
 ```sh
 yarn
+bsb -make-world
+
 yarn watch
 
 # Second terminal session
