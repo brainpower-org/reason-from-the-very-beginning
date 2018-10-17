@@ -24,3 +24,12 @@ let evens_tail = l => {
     };
     aux([], 0)    
 };
+
+/* count_true: bool list -> int; */
+let rec count_true = l => {
+    switch l {
+    | [] => 0
+    | [true, ...t] => 1 + count_true(t)
+    | [_, ...t] => count_true(t)
+    }
+}
