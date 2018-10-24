@@ -22,3 +22,30 @@ describe("count_true", () => {
   test("one false", () => expect(count_true([false])) |> toEqual(0));
   test("one true", () => expect(count_true([true])) |> toEqual(1));
 });
+
+describe("palindrome", () => {
+  test("empty", () => expect(palindrome([])) |> toEqual([]));
+  test("single", () => expect(palindrome([1])) |> toEqual([1,1]));
+  test("basic", () => expect(palindrome([true, false])) |> toEqual([true, false, false, true]));
+});
+
+describe("is_palindrome_wurscht", () => {
+  test("empty", () => expect(is_palindrome_wurscht([])) |> toEqual(true));
+  test("single", () => expect(is_palindrome_wurscht([1])) |> toEqual(true));
+  test("basic", () => expect(is_palindrome_wurscht([true, false])) |> toEqual(false));
+});
+
+describe("is_palindrome_tail_wurscht", () => {
+  test("empty", () => expect(is_palindrome_tail_wurscht([])) |> toEqual(true));
+  test("single", () => expect(is_palindrome_tail_wurscht([1])) |> toEqual(true));
+  test("basic_number", () => expect(is_palindrome_tail_wurscht([1, 2,3])) |> toEqual(false));
+  test("basic", () => expect(is_palindrome_tail_wurscht([true, false])) |> toEqual(false));
+});
+
+describe("is_palindrome", () => {
+  test("empty", () => expect(is_palindrome([])) |> toBe(true));
+  test("single", () => expect(is_palindrome([1])) |> toBe(true));
+  test("no_palindrome", () => expect(is_palindrome([1,2])) |> toBe(false));
+  test("basic", () => expect(is_palindrome([1,2,1])) |> toBe(true));
+});
+
