@@ -66,3 +66,20 @@ let is_palindrome_tail_custom_equal = l => {
   let r = List.rev(l);
   is_equal(l, r, true);
 };
+
+/* drop_last: a' list -> a' list */
+let drop_last = l => {
+  switch (List.rev(l)) {
+  | [] => []
+  | [_, ...t] => List.rev(t);
+  };
+}
+
+/* drop_last_recursive: a' list -> a' list */
+let rec drop_last_recursive = l =>  {
+  switch l {
+  | [] => []
+  | [_] => []
+  | [h, ...t] => [h, ...drop_last_recursive(t)];
+  };
+}

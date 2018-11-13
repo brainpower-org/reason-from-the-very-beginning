@@ -49,3 +49,14 @@ describe("is_palindrome", () => {
   test("basic", () => expect(is_palindrome([1, 2, 1])) |> toBe(true));
 });
 
+describe("drop_last", () => {
+  test("empty", () => expect(drop_last([])) |> toEqual([]));
+  test("basic", () => expect(drop_last([1, 2, 3, 4])) |> toEqual([1, 2, 3]));
+  test("two last equals", () => expect(drop_last([1, 2, 1, 1])) |> toEqual([1, 2, 1]));
+});
+
+describe("drop_last_recursive", () => {
+  test("empty", () => expect(drop_last_recursive([])) |> toEqual([]));
+  test("basic", () => expect(drop_last_recursive([1, 2, 3, 4])) |> toEqual([1, 2, 3]));
+  test("two last equals", () => expect(drop_last_recursive([1, 2, 1, 1])) |> toEqual([1, 2, 1]));
+});
