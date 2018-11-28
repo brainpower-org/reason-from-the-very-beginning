@@ -28,14 +28,17 @@ let rec count_true = l =>
   | [_, ...t] => count_true(t)
   };
 
+/* palindrome: a' list -> a' list  */
 let palindrome = l => l @ List.rev(l);
 
+/* is_palindrome: a' list -> bool */
 let is_palindrome = l => {
   let r = List.rev(l);
   r == l;
 };
 
-let is_palindrome_wurscht = l => {
+/* is_palindrome_custom_equal: a' list -> bool */
+let is_palindrome_custom_equal = l => {
   let rec is_equal = (l, r) =>
     switch (l, r) {
     | ([], []) => true
@@ -46,8 +49,8 @@ let is_palindrome_wurscht = l => {
   let r = List.rev(l);
   is_equal(l, r);
 };
-
-let is_palindrome_tail_wurscht = l => {
+/* is_palindrome_tail_custom_equal: a' list -> bool */
+let is_palindrome_tail_custom_equal = l => {
   let rec is_equal = (l, r, _is_palindrome) =>
     if (_is_palindrome) {
       switch (l, r) {
@@ -63,3 +66,20 @@ let is_palindrome_tail_wurscht = l => {
   let r = List.rev(l);
   is_equal(l, r, true);
 };
+
+/* drop_last: a' list -> a' list */
+let drop_last = l => {
+  switch (List.rev(l)) {
+  | [] => []
+  | [_, ...t] => List.rev(t);
+  };
+}
+
+/* drop_last_recursive: a' list -> a' list */
+let rec drop_last_recursive = l =>  {
+  switch l {
+  | [] => []
+  | [_] => []
+  | [h, ...t] => [h, ...drop_last_recursive(t)];
+  };
+}
