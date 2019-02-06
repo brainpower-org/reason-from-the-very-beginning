@@ -93,8 +93,14 @@ describe("drop_last_array", () => {
 
 
 /* 4.5 */
-/*describe("member", () => {
-  test("empty", () => expect(member(1, []) |> toEqual(false)));
+describe("member", () => {
+  test("empty", () => expect(member(1, [])) |> toEqual(false));
   test("match", () => expect(member(1, [1, 2, 3, 4])) |> toEqual(true));
   test("not in list", () => expect(member(3, [1, 2, 1, 1])) |> toEqual(false));
-});*/
+});
+
+describe("member_match", () => {
+  test("empty", () => expect(member_match(1, [])) |> toEqual(false));
+  test("match", () => expect(member_match(1, [1, 2, 3, 4])) |> toEqual(true));
+  test("not in list", () => expect(member_match(3, [1, 2, 1, 1])) |> toEqual(false));
+});

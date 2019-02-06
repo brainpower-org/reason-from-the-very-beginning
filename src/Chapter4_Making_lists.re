@@ -133,4 +133,16 @@ let rec member = (a, l) =>
   | [h, ...t] => a == h ? true : member(a, t)
   };
 
+let rec member_match = (a, l) =>
+  switch l {
+  | [] => false
+  | [h, ..._] when a == h => true
+  | [_, ...t] => member_match(a, t)
+  }
 
+/*  
+* 6 Use your member function to write a function make_set which, 
+* given a list, returns a list which contains all the elements of the original list, 
+* but has no duplicate elements. For example, make_set [1; 2; 3; 3; 1] might return [2; 3; 1]. 
+* What is the type of your function?
+*/
