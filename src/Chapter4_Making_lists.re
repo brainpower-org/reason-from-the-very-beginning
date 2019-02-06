@@ -101,7 +101,7 @@ let drop_last_tail_recursive = l => {
 
 /* (int, int) => int */
 let max_int = (a, b) => {
-  if (a <= b) {
+  if (a >= b) {
     a
   } else {
     b
@@ -119,13 +119,18 @@ let drop_last_array = l => {
   Array.sub(a, 0, len) |> Array.to_list
 }
 
+/*  
+ * Write a function member of type α → α list → bool which 
+ * returns true if an element exists in a list, or false if not. 
+ * For example, member 2 [1; 2; 3] should evaluate to true, 
+ * but member 3 [1; 2] should evaluate to false.
+ */
 
-/* 4.5: member: a' -> a' list -> a' list */
-
-
-
-
-
-
+/* 4.5: member: a' -> a' list -> bool */
+let rec member = (a, l) => 
+  switch l {
+  | [] => false
+  | [h, ...t] => a == h ? true : member(a, t)
+  };
 
 
