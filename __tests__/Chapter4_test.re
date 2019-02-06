@@ -77,6 +77,13 @@ describe("drop_last_tail_recursive", () => {
   test("two last equals", () => expect(drop_last_tail_recursive([1, 2, 1, 1])) |> toEqual([1, 2, 1]));
 });
 
+/* max_int */
+describe("max_int", () => {
+  test("max_int", () => expect(max_int(0, 3)) |> toEqual(3));
+  test("max_int", () => expect(max_int(10, -6)) |> toEqual(10));
+  test("max_int", () => expect(max_int(6, 6)) |> toEqual(6));
+});
+
 /* 4.4 */
 describe("drop_last_array", () => {
   test("empty", () => expect(drop_last_array([])) |> toEqual([]));
@@ -86,8 +93,8 @@ describe("drop_last_array", () => {
 
 
 /* 4.5 */
-/* describe("member", () => {
+/*describe("member", () => {
   test("empty", () => expect(member(1, []) |> toEqual(false)));
   test("match", () => expect(member(1, [1, 2, 3, 4])) |> toEqual(true));
   test("not in list", () => expect(member(3, [1, 2, 1, 1])) |> toEqual(false));
-}); */
+});*/
