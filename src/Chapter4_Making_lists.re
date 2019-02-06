@@ -1,3 +1,4 @@
+/* 4.1 */
 let evens = l => {
   let rec aux = (l, i) =>
     switch (l) {
@@ -8,6 +9,7 @@ let evens = l => {
   aux(l, 1);
 };
 
+/* 4.1 */
 let evens_tail = l => {
   let rec aux = (r, i) =>
     if (List.length(l) == i) {
@@ -20,7 +22,7 @@ let evens_tail = l => {
   aux([], 0);
 };
 
-/* count_true: bool list -> int; */
+/* 4.2: count_true: bool list -> int; */
 let rec count_true = l =>
   switch (l) {
   | [] => 0
@@ -28,16 +30,16 @@ let rec count_true = l =>
   | [_, ...t] => count_true(t)
   };
 
-/* palindrome: a' list -> a' list  */
+/* 4.3: palindrome: a' list -> a' list  */
 let palindrome = l => l @ List.rev(l);
 
-/* is_palindrome: a' list -> bool */
+/* 4.3: is_palindrome: a' list -> bool */
 let is_palindrome = l => {
   let r = List.rev(l);
   r == l;
 };
 
-/* is_palindrome_custom_equal: a' list -> bool */
+/* 4.3: is_palindrome_custom_equal: a' list -> bool */
 let is_palindrome_custom_equal = l => {
   let rec is_equal = (l, r) =>
     switch (l, r) {
@@ -49,7 +51,7 @@ let is_palindrome_custom_equal = l => {
   let r = List.rev(l);
   is_equal(l, r);
 };
-/* is_palindrome_tail_custom_equal: a' list -> bool */
+/* 4.3: is_palindrome_tail_custom_equal: a' list -> bool */
 let is_palindrome_tail_custom_equal = l => {
   let rec is_equal = (l, r, _is_palindrome) =>
     if (_is_palindrome) {
@@ -67,7 +69,7 @@ let is_palindrome_tail_custom_equal = l => {
   is_equal(l, r, true);
 };
 
-/* drop_last: a' list -> a' list */
+/* 4.4: drop_last: a' list -> a' list */
 let drop_last = l => {
   switch (List.rev(l)) {
   | [] => []
@@ -75,7 +77,7 @@ let drop_last = l => {
   };
 }
 
-/* drop_last_recursive: a' list -> a' list */
+/* 4.4: drop_last_recursive: a' list -> a' list */
 let rec drop_last_recursive = l =>  {
   switch l {
   | [] => []
@@ -83,3 +85,47 @@ let rec drop_last_recursive = l =>  {
   | [h, ...t] => [h, ...drop_last_recursive(t)];
   };
 }
+
+
+/* 4.4: drop_last_recursive: a' list -> a' list */
+let drop_last_tail_recursive = l => {
+  let rec aux = (l, acc_list) => {
+    switch l {
+    | [] => []
+    | [_] => acc_list
+    | [h, ...t] => aux(t,  [h, ...acc_list])
+    }
+  }
+  aux(l, []) |> List.rev
+}
+
+/* (int, int) => int */
+let max_int = (a, b) => {
+  if (a <= b) {
+    a
+  } else {
+    b
+  }
+}
+
+/* 
+  https://reasonml.github.io/api/Array.html
+  https://reasonml.github.io/api/Num.html
+*/
+/* 4.4: (a' list) => a' list */
+let drop_last_array = l => {
+  let a = Array.of_list(l);
+  let len = max_int(0, Array.length(a) - 1);
+  Array.sub(a, 0, len) |> Array.to_list
+}
+
+
+/* 4.5: member: a' -> a' list -> a' list */
+
+
+
+
+
+
+
+

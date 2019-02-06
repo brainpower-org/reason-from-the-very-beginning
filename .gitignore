@@ -1,6 +1,6 @@
 lib
 node_modules
-src/*.js
+/src/*.js
 __tests__/*.js
 .merlin
 .bsb.lock
