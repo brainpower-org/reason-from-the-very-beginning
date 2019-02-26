@@ -146,3 +146,14 @@ let rec member_match = (a, l) =>
 * but has no duplicate elements. For example, make_set [1; 2; 3; 3; 1] might return [2; 3; 1]. 
 * What is the type of your function?
 */
+/* 4.6: make_set: a' list -> a' list */
+let make_set = l => {
+  let rec aux = (initial, result) => {
+    switch initial {
+    | [] => result
+    | [h, ...t] when not (member_match(h, result)) => aux(t, [h, ...result])
+    | [_, ...t] => aux(t, result)
+    };
+  }
+  aux(l, []);
+}

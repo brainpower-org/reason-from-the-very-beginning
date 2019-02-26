@@ -104,3 +104,9 @@ describe("member_match", () => {
   test("match", () => expect(member_match(1, [1, 2, 3, 4])) |> toEqual(true));
   test("not in list", () => expect(member_match(3, [1, 2, 1, 1])) |> toEqual(false));
 });
+
+describe("make_set", () => {
+  test("empty list", () => expect(make_set([])) |> toEqual([]));
+  test("list without duplicates", () => expect(make_set([1, 5, 7, 8])) |> toEqual([8, 7, 5, 1]));
+  test("list with duplicates", () => expect(make_set([1, 1, 5, 7, 8, 8])) |> toEqual([8, 7, 5, 1]));
+})
