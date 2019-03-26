@@ -146,9 +146,9 @@ let rec exists = (a, p) =>
 
 /*  
 * 6 Use your member function to write a function make_set which, 
-* given a list, returns a list which contains all the elements of the original list, 
-* but has no duplicate elements. For example, make_set [1; 2; 3; 3; 1] might return [2; 3; 1]. 
-* What is the type of your function?
+*   given a list, returns a list which contains all the elements of the original list, 
+*   but has no duplicate elements. For example, make_set [1; 2; 3; 3; 1] might return [2; 3; 1]. 
+*   What is the type of your function?
 */
 /* 4.6: make_set: a' list -> a' list */
 let make_set = l => {
@@ -162,10 +162,17 @@ let make_set = l => {
   aux(l, []);
 }
 
-
 /* 
- * 7 Can you explain why the rev function we defined is inefficient? 
- *   How does the time it takes to run relate to the size of its argument? 
- *   Can you write a more efficient version using an accumulating argument? 
- *   What is its efficiency in terms of time taken and space used? 
+* 7 Can you explain why the rev function we defined is inefficient? 
+*   How does the time it takes to run relate to the size of its argument? 
+*   Can you write a more efficient version using an accumulating argument? 
+*   What is its efficiency in terms of time taken and space used? 
+*
+*   ```ml
+*   /* rev : a' list→ a' list */
+*   let rec rev l = match l with
+*   | [] -> []
+*   | h::t -> rev t @ [h]
+*   ```
 */
+/* 4.7: optimized_rev: a' list -> a' list */
