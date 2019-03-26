@@ -91,7 +91,6 @@ describe("drop_last_array", () => {
   test("two last equals", () => expect(drop_last_array([1, 2, 1, 1])) |> toEqual([1, 2, 1]));
 });
 
-
 /* 4.5 */
 describe("member", () => {
   test("empty", () => expect(member(1, [])) |> toEqual(false));
@@ -105,8 +104,14 @@ describe("member_match", () => {
   test("not in list", () => expect(member_match(3, [1, 2, 1, 1])) |> toEqual(false));
 });
 
+describe("exists", () => {
+  test("empty", () => expect(exists([], i => i === 1)) |> toEqual(false));
+  test("match", () => expect(exists([1, 2, 3, 4], i => i === 3)) |> toEqual(true));
+  test("not in list", () => expect(exists([1, 2, 1, 1], i => i === 3)) |> toEqual(false));
+});
+
 describe("make_set", () => {
   test("empty list", () => expect(make_set([])) |> toEqual([]));
   test("list without duplicates", () => expect(make_set([1, 5, 7, 8])) |> toEqual([8, 7, 5, 1]));
   test("list with duplicates", () => expect(make_set([1, 1, 5, 7, 8, 8])) |> toEqual([8, 7, 5, 1]));
-})
+});

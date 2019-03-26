@@ -70,48 +70,43 @@ let is_palindrome_tail_custom_equal = l => {
 };
 
 /* 4.4: drop_last: a' list -> a' list */
-let drop_last = l => {
+let drop_last = l =>
   switch (List.rev(l)) {
   | [] => []
-  | [_, ...t] => List.rev(t);
+  | [_, ...t] => List.rev(t)
   };
-}
 
 /* 4.4: drop_last_recursive: a' list -> a' list */
-let rec drop_last_recursive = l =>  {
-  switch l {
+let rec drop_last_recursive = l =>
+  switch (l) {
   | [] => []
   | [_] => []
-  | [h, ...t] => [h, ...drop_last_recursive(t)];
+  | [h, ...t] => [h, ...drop_last_recursive(t)]
   };
-}
-
 
 /* 4.4: drop_last_recursive: a' list -> a' list */
 let drop_last_tail_recursive = l => {
-  let rec aux = (l, acc_list) => {
-    switch l {
+  let rec aux = (l, acc_list) =>
+    switch (l) {
     | [] => []
     | [_] => acc_list
-    | [h, ...t] => aux(t,  [h, ...acc_list])
-    }
-  }
-  aux(l, []) |> List.rev
-}
+    | [h, ...t] => aux(t, [h, ...acc_list])
+    };
+  aux(l, []) |> List.rev;
+};
 
 /* (int, int) => int */
-let max_int = (a, b) => {
+let max_int = (a, b) =>
   if (a >= b) {
-    a
+    a;
   } else {
-    b
-  }
-}
+    b;
+  };
 
-/* 
-  https://reasonml.github.io/api/Array.html
-  https://reasonml.github.io/api/Num.html
-*/
+/*
+   https://reasonml.github.io/api/Array.html
+   https://reasonml.github.io/api/Num.html
+ */
 /* 4.4: (a' list) => a' list */
 let drop_last_array = l => {
   let a = Array.of_list(l);
@@ -140,6 +135,15 @@ let rec member_match = (a, l) =>
   | [_, ...t] => member_match(a, t)
   }
 
+/* a' list -> (('a) => boolean) -> boolean */
+let rec exists = (a, p) => 
+  switch a {
+  | [] => false
+  | [h, ..._] when p(h) => true
+  | [_, ...t] => exists(t, p)
+  }
+
+
 /*  
 * 6 Use your member function to write a function make_set which, 
 * given a list, returns a list which contains all the elements of the original list, 
@@ -157,3 +161,4 @@ let make_set = l => {
   }
   aux(l, []);
 }
+
