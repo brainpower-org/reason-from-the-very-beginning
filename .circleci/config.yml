@@ -3,13 +3,13 @@ jobs:
   build:
     docker:
       - image: brainpower/reason-from-the-very-beginning-dev
-    working_directory: /repo
+    working_directory: /root/repo
     steps:
       - checkout:
-          path: ~/checkout
+          path: /root/checkout
       - run:
           name: Sync
-          command: cp -rf ~/checkout/* /repo/
+          command: cp -rf /root/checkout/* /root/repo
       - run:
           name: Install
           command: yarn
