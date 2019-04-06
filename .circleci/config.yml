@@ -15,7 +15,7 @@ jobs:
           command: yarn
       - run:
           name: Compile dependencies
-          command: yarn bsb  -make-world
+          command: yarn bsb -- -make-world
       - run:
           name: Compile
           command: yarn bsb
