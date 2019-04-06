@@ -9,7 +9,7 @@ jobs:
           path: ~/checkout
       - run:
           name: Sync
-          command: sudo cp -rf ~/checkout/* /repo/
+          command: cp -rf ~/checkout/* /repo/
       - run:
           name: Install
           command: yarn
