@@ -96,7 +96,7 @@ let drop_last_tail_recursive = l => {
 };
 
 /* (int, int) => int */
-let max_int = (a, b) =>
+let bigger = (a, b) =>
   if (a >= b) {
     a;
   } else {
@@ -110,7 +110,7 @@ let max_int = (a, b) =>
 /* 4.4: (a' list) => a' list */
 let drop_last_array = l => {
   let a = Array.of_list(l);
-  let len = max_int(0, Array.length(a) - 1);
+  let len = bigger(0, Array.length(a) - 1);
   Array.sub(a, 0, len) |> Array.to_list
 }
 

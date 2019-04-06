@@ -7,8 +7,19 @@
 
 ## Prerequesites
 
-* yarn `>= 1.9`
-* Node.js `>= 8`
+* docker-compose
+* Browser
+
+
+## Getting started
+
+```sh
+docker-compose pull
+docker-compose up # Open browser at localhost:8443
+```
+
+<details>
+<summary>Local Setup</summary>
 
 ## Getting started
 
@@ -24,6 +35,7 @@ yarn test --watchAll
 # Third terminal session
 node src/[module-name]
 ```
+</details>
 
 
 ## Related
