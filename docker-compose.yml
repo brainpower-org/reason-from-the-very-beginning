@@ -6,12 +6,16 @@ services:
     ports:
       - "8443:8443"
     volumes:
-      - "./.git:/root/repo/.git"
-      - "./.vscode:/root/repo/.vscode"
-      - "./src:/root/repo/src"
-      - "./.gitignore:/root/repo/.gitignore"
-      - "./bsconfig.json:/root/repo/bsconfig.json"
-      - "./package.json:/root/repo/package.json"
-      - "./README.md:/root/repo/README.md"
-      - "./yarn.lock:/root/repo/yarn.lock"
+      # Everything except lib
+      - ./.git:/root/repo/.git
+      - ./.vscode:/root/repo/.vscode
+      - ./src:/root/repo/src/
+      - ./.gitignore:/root/repo/.gitignore
+      - ./bsconfig.json:/root/repo/bsconfig.json
+      - ./docker-compose.yml:/root/repo/docker-compose.yml
+      - ./Dockerfile:/root/repo/Dockerfile
+      - ./jest.config.js:/root/repo/jest.config.js
+      - ./package.json:/root/repo/package.json
+      - ./README.md:/root/repo/README.md
+      - ./yarn.lock:/root/repo/yarn.lock
     command: code-server --no-auth /root/repo
