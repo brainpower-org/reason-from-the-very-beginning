@@ -162,6 +162,14 @@ let make_set = l => {
   aux(l, []) |> List.rev;
 }
 
+let rec make_set_no_acc = l => {
+  switch l {
+  | [] => []
+  | [h, ...t] when not (member_match(h, t)) => [h, ...make_set_no_acc(t)]
+  | [_, ...t] => make_set_no_acc(t)
+  };
+}
+
 /* 
 * 7 Can you explain why the rev function we defined is inefficient? 
 *   How does the time it takes to run relate to the size of its argument? 
