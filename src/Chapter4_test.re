@@ -115,3 +115,9 @@ describe("make_set", () => {
   test("list without duplicates", () => expect(make_set([1, 5, 7, 8])) |> toEqual([1, 5, 7, 8]));
   test("list with duplicates", () => expect(make_set([1, 1, 8, 3, 5, 7, 8, 8, 3])) |> toEqual([1, 5, 7, 8, 3]));
 });
+
+describe("make_set", () => {
+  test("empty list", () => expect(make_set_no_acc([])) |> toEqual([]));
+  test("list without duplicates", () => expect(make_set_no_acc([1, 5, 7, 8])) |> toEqual([1, 5, 7, 8]));
+  test("list with duplicates", () => expect(make_set_no_acc([1, 1, 8, 3, 5, 7, 8, 8, 3])) |> toEqual([1, 5, 7, 8, 3]));
+});
