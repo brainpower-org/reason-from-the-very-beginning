@@ -155,11 +155,11 @@ let make_set = l => {
   let rec aux = (initial, result) => {
     switch initial {
     | [] => result
-    | [h, ...t] when not (member_match(h, result)) => aux(t, [h, ...result])
+    | [h, ...t] when not (member_match(h, t)) => aux(t, [h, ...result])
     | [_, ...t] => aux(t, result)
     };
   }
-  aux(l, []);
+  aux(l, []) |> List.rev;
 }
 
 /* 
